@@ -4,10 +4,58 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="text-center">
-      <h1 className=" text-6xl mb-5">Vite + React + Tailwind</h1>
-      <h2 className="text-4xl mb-4">Template</h2>
-      <nav>
+    <header className=" bg-yellow-300 text-black drop-shadow-2xl ">
+      <div className="container mx-auto py-6 flex justify-between items-center">
+        {/* Title */}
+        <div className=" flex items-center justify-center">
+          <img
+            src="/bee.jpg"
+            alt="bee"
+            width={100}
+            height={100}
+            className=" rounded-2xl mr-5"
+          />
+          <h1 className=" text-4xl">API Posts</h1>
+        </div>
+
+        {/* NAV */}
+        <nav>
+          <ul className="flex gap-3 justify-center">
+            <li className="flex justify-center items-center group">
+              <img
+                src="/bee.jpg"
+                alt="bee"
+                width={40}
+                height={40}
+                className="rounded-xl mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+              />
+              <Link
+                to="/"
+                className="text-xl hover:text-yellow-900 relative z-10"
+              >
+                Home
+              </Link>
+            </li>
+
+            <li className="flex justify-center items-center group">
+              <img
+                src="/bee.jpg"
+                alt="bee"
+                width={40}
+                height={40}
+                className="rounded-xl mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+              />
+              <Link
+                to="/add-post"
+                className="text-xl hover:text-yellow-900 relative z-10"
+              >
+                Add Post
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {/* <nav>
         <ul className="flex gap-3 justify-center">
           <li>
             <Link to="/" className="hover:text-orange-500">
@@ -25,7 +73,7 @@ function Header() {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 }
