@@ -14,7 +14,6 @@ function Home() {
 
         const data = await response.json();
         setPosts(data.posts);
-        console.log(data.posts);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -33,31 +32,46 @@ function Home() {
         </div>
 
         {/* cards */}
-        <div className="grid gap-8 md:grid-cols-3 sm:grid-cols-1">
+        <div className="grid gap-8 grid-cols-1">
           {posts.map((post) => (
             <div
               key={post.id}
               className="border rounded-lg overflow-hidden bg-white shadow-lg"
             >
-              <div className="px-6 py-4 flex flex-col h-full">
+              <div className="px-6 py-4 flex flex-wrap">
                 {/* CARD HEADER */}
-                <div className="card-header flex justify-between items-center mb-5">
-                  <h3 className="text-lg font-semibold text-yellow-500">
+                <div className="card-header flex justify-between items-center w-full mb-4">
+                  <h3 className="text-2xl font-bold text-yellow-500">
                     {post.title}
                   </h3>
-                  <img src="/bee.jpg" alt="bee" width={25} height={25} />
+                  <img src="/bee.jpg" alt="bee" width={50} height={50} />
                 </div>
 
                 {/* IMAGE */}
-                <div className="mb-8">
-                  <img src={post.image} alt="post image" />
+                <div className="mr-5">
+                  <img
+                    src={post.image}
+                    alt="post image"
+                    className=" rounded-lg"
+                  />
                 </div>
 
-                {/* CONTENT */}
-                <p className="text-gray-700">{post.content}</p>
+                <div className=" flex flex-col w-1/2 py-4">
+                  {/* CONTENT */}
+                  <p className="text-gray-700">{post.content}</p>
 
-                {/* Category */}
-                <p className="text-gray-700">{post.category.name}</p>
+                  {/* Category */}
+                  <div className="text-gray-700 font-bold text-lg mt-auto">
+                    {post.category.name}
+                  </div>
+
+                  {/* Tags */}
+                  <div className="text-gray-700 font-semibold text-md">
+                    {post.tags.map((t) => {
+                      return <span key={t.name}>#{t.name} </span>;
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
