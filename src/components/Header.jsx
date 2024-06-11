@@ -25,13 +25,13 @@ function Header() {
               <img
                 src="/bee.jpg"
                 alt="bee"
-                width={40}
-                height={40}
+                width={30}
+                height={30}
                 className="rounded-xl mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
               />
               <Link
                 to="/"
-                className="text-xl hover:text-yellow-900 relative z-10"
+                className="text-lg hover:text-yellow-900 relative z-10"
               >
                 Home
               </Link>
@@ -41,15 +41,31 @@ function Header() {
               <img
                 src="/bee.jpg"
                 alt="bee"
-                width={40}
-                height={40}
+                width={30}
+                height={30}
                 className="rounded-xl mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
               />
               <Link
                 to="/add-post"
-                className="text-xl hover:text-yellow-900 relative z-10"
+                className="text-lg hover:text-yellow-900 relative z-10"
               >
                 Add Post
+              </Link>
+            </li>
+
+            <li className="flex justify-center items-center group">
+              <img
+                src="/bee.jpg"
+                alt="bee"
+                width={30}
+                height={30}
+                className="rounded-xl mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+              />
+              <Link
+                to="/login"
+                className="text-lg hover:text-yellow-900 relative z-10"
+              >
+                Login
               </Link>
             </li>
           </ul>
